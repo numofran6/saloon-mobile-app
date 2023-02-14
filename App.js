@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useFonts } from 'expo-font';
+import Hero from './screen/Hero';
+
+const theme = {
+	...DarkTheme,
+	colors: {
+		...DarkTheme.colors,
+		background: 'transparent',
+	},
+};
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	const [loaded] = useFonts({
+		InterBold: require('./assets/fonts/Inter-Bold.ttf'),
+		InterLight: require('./assets/fonts/Inter-Light.ttf'),
+		InterMedium: require('./assets/fonts/Inter-Medium.ttf'),
+		InterRegular: require('./assets/fonts/Inter-Regular.ttf'),
+		InterSemiBold: require('./assets/fonts/Inter-SemiBold.ttf'),
+	});
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	if (!loaded) return null;
+
+	return (
+		<NavigationContainer theme={theme}>
+			<Stack.Navigator
+				screenOptions={{ headerShown: false }}
+				initialRouteName="hero"
+			>
+				<Stack.Screen name="hero" component={Hero} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+}
