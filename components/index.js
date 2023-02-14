@@ -6,6 +6,7 @@ import {
 	AuthButton,
 } from './Buttons';
 import Login from './Login';
+import SignUp from './SignUp';
 
 export {
 	FocusedStatusBar,
@@ -14,4 +15,5 @@ export {
 	TextButton,
 	Login,
 	AuthButton,
+	SignUp,
 };

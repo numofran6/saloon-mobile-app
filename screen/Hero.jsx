@@ -1,16 +1,25 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import {
 	FilledButton,
 	FocusedStatusBar,
 	Login,
 	OutlinedButton,
+	SignUp,
 	TextButton,
 } from '../components';
-import { assets, COLORS, FONTS, SIZES } from '../constants';
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
+import { AuthScreenContext } from '../context/AuthScreenContext';
+import { useNavigation } from '@react-navigation/native';
 
 const Hero = () => {
-	const [loginScreen, setLoginScreen] = useState(true);
+	const {
+		showLoginScreen,
+		setShowLoginScreen,
+		showSignUpScreen,
+		setShowSignUpScreen,
+	} = useContext(AuthScreenContext);
+	const navigation = useNavigation();
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
@@ -28,28 +37,40 @@ const Hero = () => {
 				/>
 
 				<View style={styles.subContainer}>
-					<Text style={styles.storeName}>Defavoured Saloon</Text>
+					<Text style={styles.storeName}>
+						De<Text style={{ color: '#d0206f' }}>favoured</Text> Saloon
+					</Text>
 
 					<View style={styles.actions}>
 						<View style={styles.buttons}>
-							<OutlinedButton minWidth={'40%'}>
+							<OutlinedButton
+								minWidth={'40%'}
+								handlePress={() => setShowLoginScreen(true)}
+							>
 								<Text>Log in</Text>
 							</OutlinedButton>
 
-							<FilledButton minWidth={'40%'} bg={COLORS.primary}>
+							<FilledButton
+								minWidth={'40%'}
+								bg={COLORS.primary}
+								handlePress={() => setShowSignUpScreen(true)}
+							>
 								<Text>Sign Up</Text>
 							</FilledButton>
 						</View>
 
 						<View style={{ marginTop: SIZES.medium }}>
-							<TextButton>
-								<Text>Continue without Signing In</Text>
+							<TextButton handlePress={() => navigation.navigate('home')}>
+								<Text style={{ color: '#d0206f' }}>
+									Continue without Signing In
+								</Text>
 							</TextButton>
 						</View>
 					</View>
 				</View>
 
-				{loginScreen && <Login />}
+				{showLoginScreen && <Login />}
+				{showSignUpScreen && <SignUp />}
 			</View>
 		</SafeAreaView>
 	);
@@ -77,7 +98,7 @@ const styles = StyleSheet.create({
 	},
 	storeName: {
 		fontFamily: FONTS.bold,
-		fontSize: SIZES.xxlarge,
+		fontSize: SIZES.xxlarge + 5,
 		color: COLORS.primary,
 	},
 	actions: {

@@ -4,17 +4,17 @@ import { assets, COLORS, FONTS, SIZES } from '../constants';
 import { AuthButton, CircleButton } from './Buttons';
 import { AuthScreenContext } from '../context/AuthScreenContext';
 
-const Login = () => {
-	const { setShowLoginScreen } = useContext(AuthScreenContext);
+const SignUp = () => {
+	const { setShowSignUpScreen } = useContext(AuthScreenContext);
 
 	return (
 		<View style={styles.container}>
 			<View style={styles.headSection}>
-				<Text style={styles.title}>Sign Into Your Account</Text>
+				<Text style={styles.title}>Create Account</Text>
 
 				<CircleButton
 					imgUrl={assets.close}
-					handlePress={() => setShowLoginScreen(false)}
+					handlePress={() => setShowSignUpScreen(false)}
 				/>
 			</View>
 
@@ -30,18 +30,24 @@ const Login = () => {
 					placeholderTextColor={COLORS.gray}
 					style={{ ...styles.textInputStyle, marginTop: SIZES.xlarge }}
 				/>
+
+				<TextInput
+					placeholder="Confirm Password"
+					placeholderTextColor={COLORS.gray}
+					style={{ ...styles.textInputStyle, marginTop: SIZES.xlarge }}
+				/>
 			</View>
 
 			<View>
 				<AuthButton bg={COLORS.secondary} minWidth={'100%'}>
-					<Text>Log In</Text>
+					<Text>Sign Up</Text>
 				</AuthButton>
 			</View>
 		</View>
 	);
 };
 
-export default Login;
+export default SignUp;
 
 const styles = StyleSheet.create({
 	container: {

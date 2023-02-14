@@ -1,7 +1,13 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import { COLORS, SIZES } from '../constants';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { COLORS, SHADOWS, SIZES } from '../constants';
 
-export const FilledButton = ({ minWidth, bg, children, ...rest }) => {
+export const FilledButton = ({
+	minWidth,
+	bg,
+	children,
+	handlePress,
+	...rest
+}) => {
 	return (
 		<TouchableOpacity
 			{...rest}
@@ -15,6 +21,7 @@ export const FilledButton = ({ minWidth, bg, children, ...rest }) => {
 				alignItems: 'center',
 				justifyContent: 'center',
 			}}
+			onPress={handlePress}
 		>
 			<Text
 				style={{
@@ -29,7 +36,12 @@ export const FilledButton = ({ minWidth, bg, children, ...rest }) => {
 	);
 };
 
-export const OutlinedButton = ({ minWidth, children, ...rest }) => {
+export const OutlinedButton = ({
+	minWidth,
+	children,
+	handlePress,
+	...rest
+}) => {
 	return (
 		<TouchableOpacity
 			{...rest}
@@ -43,6 +55,7 @@ export const OutlinedButton = ({ minWidth, children, ...rest }) => {
 				alignItems: 'center',
 				justifyContent: 'center',
 			}}
+			onPress={handlePress}
 		>
 			<Text
 				style={{
@@ -57,7 +70,7 @@ export const OutlinedButton = ({ minWidth, children, ...rest }) => {
 	);
 };
 
-export const TextButton = ({ minWidth, children, ...rest }) => {
+export const TextButton = ({ minWidth, children, handlePress, ...rest }) => {
 	return (
 		<TouchableOpacity
 			{...rest}
@@ -69,6 +82,7 @@ export const TextButton = ({ minWidth, children, ...rest }) => {
 				justifyContent: 'center',
 				backgroundColor: 'rgba(150, 150, 150, 0.2)',
 			}}
+			onPress={handlePress}
 		>
 			<Text
 				style={{
@@ -83,7 +97,13 @@ export const TextButton = ({ minWidth, children, ...rest }) => {
 	);
 };
 
-export const AuthButton = ({ minWidth, bg, children, ...rest }) => {
+export const AuthButton = ({
+	minWidth,
+	bg,
+	children,
+	handlePress,
+	...rest
+}) => {
 	return (
 		<TouchableOpacity
 			{...rest}
@@ -98,6 +118,7 @@ export const AuthButton = ({ minWidth, bg, children, ...rest }) => {
 				alignItems: 'center',
 				justifyContent: 'center',
 			}}
+			onPress={handlePress}
 		>
 			<Text
 				style={{
@@ -108,6 +129,30 @@ export const AuthButton = ({ minWidth, bg, children, ...rest }) => {
 			>
 				{children}
 			</Text>
+		</TouchableOpacity>
+	);
+};
+
+export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
+	return (
+		<TouchableOpacity
+			style={{
+				width: 40,
+				height: 40,
+				backgroundColor: COLORS.secondary,
+				borderRadius: SIZES.extraLarge,
+				alignItems: 'center',
+				justifyContent: 'center',
+				...SHADOWS.light,
+				...props,
+			}}
+			onPress={handlePress}
+		>
+			<Image
+				source={imgUrl}
+				resizeMode="contain"
+				style={{ width: 24, height: 24 }}
+			/>
 		</TouchableOpacity>
 	);
 };

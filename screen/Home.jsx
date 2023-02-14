@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const Home = () => {
 	return (
-		<View>
+		<SafeAreaView style={{ flex: 1 }}>
 			<Text>Home</Text>
-		</View>
+		</SafeAreaView>
 	);
 };
 
