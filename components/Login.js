@@ -15,6 +15,7 @@ const Login = () => {
 				<CircleButton
 					imgUrl={assets.close}
 					handlePress={() => setShowLoginScreen(false)}
+					bg={COLORS.secondary}
 				/>
 			</View>
 

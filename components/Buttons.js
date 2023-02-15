@@ -133,13 +133,13 @@ export const AuthButton = ({
 	);
 };
 
-export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
+export const CircleButton = ({ imgUrl, handlePress, bg, ...props }) => {
 	return (
 		<TouchableOpacity
 			style={{
 				width: 40,
 				height: 40,
-				backgroundColor: COLORS.secondary,
+				backgroundColor: bg,
 				borderRadius: SIZES.extraLarge,
 				alignItems: 'center',
 				justifyContent: 'center',

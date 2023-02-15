@@ -15,6 +15,7 @@ const SignUp = () => {
 				<CircleButton
 					imgUrl={assets.close}
 					handlePress={() => setShowSignUpScreen(false)}
+					bg={COLORS.secondary}
 				/>
 			</View>
 

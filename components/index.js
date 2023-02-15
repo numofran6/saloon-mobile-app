@@ -8,7 +8,7 @@ import {
 } from './Buttons';
 import Login from './Login';
 import SignUp from './SignUp';
-import Navigation from './Navigation';
+import ServicesCard from './ServicesCard';
 
 export {
 	FocusedStatusBar,
@@ -18,6 +18,6 @@ export {
 	Login,
 	AuthButton,
 	SignUp,
-	Navigation,
 	NavButton,
+	ServicesCard,
 };
