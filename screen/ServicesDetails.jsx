@@ -12,7 +12,7 @@ import { assets, COLORS, FONTS, SIZES } from '../constants';
 import { CircleButton, FilledButton } from '../components/Buttons';
 import { FocusedStatusBar } from '../components';
 
-const Details = ({ route, navigation }) => {
+const ServicesDetails = ({ route, navigation }) => {
 	const { service } = route.params;
 
 	return (
@@ -74,7 +74,7 @@ const Details = ({ route, navigation }) => {
 	);
 };
 
-export default Details;
+export default ServicesDetails;
 
 const styles = StyleSheet.create({
 	infoContainer: {

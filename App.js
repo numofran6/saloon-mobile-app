@@ -2,9 +2,9 @@ import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
 import { AuthScreenContextProvider } from './context/AuthScreenContext';
-import Details from './screen/Details';
 import Hero from './screen/Hero';
 import Main from './screen/Main';
+import ServicesDetails from './screen/ServicesDetails';
 
 const theme = {
 	...DarkTheme,
@@ -36,7 +36,7 @@ export default function App() {
 				>
 					<Stack.Screen name="hero" component={Hero} />
 					<Stack.Screen name="main" component={Main} />
-					<Stack.Screen name="details" component={Details} />
+					<Stack.Screen name="details" component={ServicesDetails} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</AuthScreenContextProvider>

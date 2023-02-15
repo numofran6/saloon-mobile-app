@@ -7,6 +7,7 @@ import {
 	StyleSheet,
 	TextInput,
 	FlatList,
+	StatusBar,
 } from 'react-native';
 import { FocusedStatusBar, ServicesCard } from '../components';
 import { assets, COLORS, FONTS, Services, SIZES } from '../constants';
@@ -32,7 +33,11 @@ const Home = ({ navigation }) => {
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
-			<FocusedStatusBar backgroundColor={COLORS.primary} />
+			<FocusedStatusBar
+				barStyle="light-content"
+				backgroundColor="transparent"
+				translucent={true}
+			/>
 
 			<View>
 				<View style={styles.heading}>
@@ -85,7 +90,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		padding: SIZES.small,
-		paddingVertical: SIZES.medium,
+		paddingTop: StatusBar.currentHeight + SIZES.medium,
+		paddingBottom: SIZES.medium,
 		backgroundColor: COLORS.primary,
 	},
 	headingText: {
