@@ -36,11 +36,19 @@ const Hero = () => {
 					style={styles.image}
 				/>
 
-				<View style={styles.subContainer}>
+				<View style={styles.heading}>
+					<Image
+						source={assets.logo}
+						resizeMode="contain"
+						style={{ width: 50, height: 50 }}
+					/>
+
 					<Text style={styles.storeName}>
 						De<Text style={{ color: '#d0206f' }}>favoured</Text> Saloon
 					</Text>
+				</View>
 
+				<View style={styles.subContainer}>
 					<View style={styles.actions}>
 						<View style={styles.buttons}>
 							<OutlinedButton
@@ -60,7 +68,7 @@ const Hero = () => {
 						</View>
 
 						<View style={{ marginTop: SIZES.medium }}>
-							<TextButton handlePress={() => navigation.navigate('home')}>
+							<TextButton handlePress={() => navigation.navigate('main')}>
 								<Text style={{ color: '#d0206f' }}>
 									Continue without Signing In
 								</Text>
@@ -87,18 +95,23 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: '100%',
 	},
+	heading: {
+		position: 'absolute',
+		top: 40,
+		width: '100%',
+		alignItems: 'center',
+	},
 	subContainer: {
 		position: 'absolute',
 		bottom: 0,
 		width: '100%',
-		height: '45%',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		zIndex: 0,
 	},
 	storeName: {
 		fontFamily: FONTS.bold,
-		fontSize: SIZES.xxlarge + 5,
+		fontSize: SIZES.xlarge,
 		color: COLORS.primary,
 	},
 	actions: {

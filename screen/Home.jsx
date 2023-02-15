@@ -1,10 +1,11 @@
 import { View, Text, SafeAreaView } from 'react-native';
+import { FocusedStatusBar } from '../components';
 
-const Home = () => {
+const Home = ({ navigation }) => {
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
+		<View>
 			<Text>Home</Text>
-		</SafeAreaView>
+		</View>
 	);
 };
 

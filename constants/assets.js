@@ -4,6 +4,7 @@ import makeupToolkit1 from '../assets/images/makeup1.jpg';
 import makeupTools from '../assets/images/makeuptools.jpg';
 
 import close from '../assets/icons/close.png';
+import logo from '../assets/icons/logo.png';
 
 export default {
 	model,
@@ -12,4 +13,5 @@ export default {
 	makeupToolkit1,
 
 	close,
+	logo,
 };

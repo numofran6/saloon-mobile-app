@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
 import { AuthScreenContextProvider } from './context/AuthScreenContext';
 import Hero from './screen/Hero';
-import Home from './screen/Home';
+import Main from './screen/Main';
 
 const theme = {
 	...DarkTheme,
@@ -34,7 +34,7 @@ export default function App() {
 					initialRouteName="hero"
 				>
 					<Stack.Screen name="hero" component={Hero} />
-					<Stack.Screen name="home" component={Home} />
+					<Stack.Screen name="main" component={Main} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</AuthScreenContextProvider>

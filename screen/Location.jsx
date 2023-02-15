@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-const Location = () => {
+const Location = ({ navigation }) => {
 	return (
 		<View>
 			<Text>Location</Text>

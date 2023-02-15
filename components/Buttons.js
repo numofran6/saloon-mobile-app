@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
 import { COLORS, SHADOWS, SIZES } from '../constants';
 
 export const FilledButton = ({
@@ -154,5 +154,24 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
 				style={{ width: 24, height: 24 }}
 			/>
 		</TouchableOpacity>
+	);
+};
+
+export const NavButton = ({ imgUrl, handlePress, ...props }) => {
+	return (
+		<Pressable
+			style={{
+				alignItems: 'center',
+				justifyContent: 'center',
+			}}
+			onPress={handlePress}
+			{...props}
+		>
+			<Image
+				source={imgUrl}
+				resizeMode="contain"
+				style={{ width: 24, height: 24 }}
+			/>
+		</Pressable>
 	);
 };
