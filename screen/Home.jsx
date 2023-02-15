@@ -9,10 +9,26 @@ import {
 	FlatList,
 } from 'react-native';
 import { FocusedStatusBar, ServicesCard } from '../components';
-import { assets, COLORS, FONTS, NFTData, SIZES } from '../constants';
+import { assets, COLORS, FONTS, Services, SIZES } from '../constants';
 
 const Home = ({ navigation }) => {
-	const [servicesData, setServicesData] = useState(NFTData);
+	const [servicesData, setServicesData] = useState(Services);
+
+	const handleSearch = (value) => {
+		if (value.length === 0) {
+			setServicesData(Services);
+		}
+
+		const filteredData = Services.filter((item) =>
+			item.name.toLowerCase().includes(value.toLowerCase())
+		);
+
+		if (filteredData.length === 0) {
+			setServicesData(Services);
+		} else {
+			setServicesData(filteredData);
+		}
+	};
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
@@ -41,7 +57,11 @@ const Home = ({ navigation }) => {
 							resizeMode="contain"
 							style={{ width: 20, height: 20, marginRight: SIZES.base }}
 						/>
-						<TextInput placeholder="Search" style={{ flex: 1 }} />
+						<TextInput
+							placeholder="Search"
+							style={{ flex: 1 }}
+							onChangeText={handleSearch}
+						/>
 					</View>
 				</View>
 			</View>
