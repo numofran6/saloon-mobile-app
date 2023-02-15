@@ -1,11 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
-import Location from './Location';
 import Shop from './Shop';
 import Profile from './Profile';
 import { COLORS, SIZES } from '../constants';
-import { Pressable } from 'react-native';
+import Map from './Map';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,7 +46,7 @@ const Main = () => {
 			})}
 		>
 			<Tab.Screen name={home} component={Home} />
-			<Tab.Screen name={location} component={Location} />
+			<Tab.Screen name={location} component={Map} />
 			<Tab.Screen name={shop} component={Shop} />
 			<Tab.Screen name={profile} component={Profile} />
 		</Tab.Navigator>
