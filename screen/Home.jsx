@@ -121,5 +121,6 @@ const styles = StyleSheet.create({
 	},
 	services: {
 		marginHorizontal: SIZES.base,
+		marginBottom: SIZES.xlarge,
 	},
 });
