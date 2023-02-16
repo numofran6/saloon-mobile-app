@@ -1,6 +1,6 @@
 import assets from './assets';
 import { COLORS, SHADOWS, SIZES, FONTS } from './theme';
-import { Services, Products, ProfileDetials } from './dummy';
+import { Services, Products, ProfileDetials, Stylists } from './dummy';
 
 export {
 	assets,
@@ -11,4 +11,5 @@ export {
 	Services,
 	Products,
 	ProfileDetials,
+	Stylists,
 };

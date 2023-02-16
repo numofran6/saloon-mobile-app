@@ -148,4 +148,22 @@ const ProfileDetials = [
 	},
 ];
 
-export { Services, Products, ProfileDetials };
+const Stylists = [
+	{
+		id: 'st-01',
+		name: 'Afia',
+		image: assets.stylist3,
+	},
+	{
+		id: 'st-02',
+		name: 'Mamle',
+		image: assets.stylist2,
+	},
+	{
+		id: 'st-03',
+		name: 'Kwaku',
+		image: assets.stylist1,
+	},
+];
+
+export { Services, Products, ProfileDetials, Stylists };

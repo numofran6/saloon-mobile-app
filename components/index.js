@@ -5,6 +5,7 @@ import {
 	TextButton,
 	AuthButton,
 	NavButton,
+	DatePickerButton,
 } from './Buttons';
 import Login from './Login';
 import SignUp from './SignUp';
@@ -19,6 +20,7 @@ export {
 	TextButton,
 	Login,
 	AuthButton,
+	DatePickerButton,
 	SignUp,
 	NavButton,
 	ServicesCard,

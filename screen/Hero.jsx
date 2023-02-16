@@ -40,7 +40,7 @@ const Hero = () => {
 					/>
 
 					<Text style={styles.storeName}>
-						De<Text style={{ color: '#d0206f' }}>favoured</Text> Saloon
+						De<Text style={{ color: '#d0206f' }}>Favoured</Text> Saloon
 					</Text>
 				</View>
 

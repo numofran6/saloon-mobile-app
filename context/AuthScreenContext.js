@@ -5,6 +5,7 @@ export const AuthScreenContext = createContext();
 export const AuthScreenContextProvider = ({ children }) => {
 	const [showLoginScreen, setShowLoginScreen] = useState(false);
 	const [showSignUpScreen, setShowSignUpScreen] = useState(false);
+	const [selected, setSelected] = useState(false);
 
 	return (
 		<AuthScreenContext.Provider
@@ -13,6 +14,8 @@ export const AuthScreenContextProvider = ({ children }) => {
 				setShowLoginScreen,
 				showSignUpScreen,
 				setShowSignUpScreen,
+				selected,
+				setSelected,
 			}}
 		>
 			{children}

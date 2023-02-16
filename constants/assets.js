@@ -26,11 +26,18 @@ import heart from '../assets/icons/heart.png';
 import left from '../assets/icons/left.png';
 import right from '../assets/icons/right.png';
 import search from '../assets/icons/search.png';
+import calendar from '../assets/icons/calendar.png';
+import clock from '../assets/icons/clock.png';
+import success from '../assets/icons/success.png';
 
 import appointment from '../assets/icons/appointment.png';
 import orders from '../assets/icons/orders.png';
 import setting from '../assets/icons/setting.png';
 import wishlist from '../assets/icons/wishlist.png';
+
+import stylist1 from '../assets/images/stylist1.jpg';
+import stylist2 from '../assets/images/stylist2.jpg';
+import stylist3 from '../assets/images/stylist3.jpg';
 
 export default {
 	appointment,
@@ -62,8 +69,15 @@ export default {
 	left,
 	right,
 	search,
+	calendar,
+	clock,
+	success,
 
 	hairModel,
 	hero1,
 	hero2,
+
+	stylist1,
+	stylist2,
+	stylist3,
 };

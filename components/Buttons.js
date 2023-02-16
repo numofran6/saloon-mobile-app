@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
+import { Text, TouchableOpacity, Image, Pressable } from 'react-native';
 import { COLORS, SHADOWS, SIZES } from '../constants';
 
 export const FilledButton = ({
@@ -173,5 +173,51 @@ export const NavButton = ({ imgUrl, handlePress, ...props }) => {
 				style={{ width: 24, height: 24 }}
 			/>
 		</Pressable>
+	);
+};
+
+export const DatePickerButton = ({
+	bg,
+	children,
+	imgUrl,
+	handlePress,
+	...rest
+}) => {
+	return (
+		<TouchableOpacity
+			{...rest}
+			style={{
+				height: 150,
+				width: 150,
+				paddingHorizontal: SIZES.large,
+				borderRadius: SIZES.small,
+				backgroundColor: bg,
+				alignItems: 'center',
+				justifyContent: 'center',
+			}}
+			onPress={handlePress}
+		>
+			<Text
+				style={{
+					textTransform: 'uppercase',
+					color: COLORS.white,
+					fontWeight: 'bold',
+				}}
+			>
+				{children}
+			</Text>
+
+			<Image
+				source={imgUrl}
+				resizeMode="contain"
+				style={{
+					width: 30,
+					height: 30,
+					position: 'absolute',
+					top: 5,
+					right: 5,
+				}}
+			/>
+		</TouchableOpacity>
 	);
 };

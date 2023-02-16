@@ -27,8 +27,8 @@ const Profile = ({ navigation }) => {
 				/>
 
 				<View style={styles.userInfo}>
-					<Text style={styles.name}>Lois</Text>
-					<Text style={styles.email}>lois@gmail.com</Text>
+					<Text style={styles.name}>Lois Numo</Text>
+					<Text style={styles.email}>loisnumo@gmail.com</Text>
 				</View>
 			</View>
 
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 	name: {
 		fontFamily: FONTS.bold,
 		fontSize: SIZES.xlarge,
-		color: '#d0206f',
+		color: '#f7d1e2',
 	},
 	email: {
 		color: '#d1d5db',
