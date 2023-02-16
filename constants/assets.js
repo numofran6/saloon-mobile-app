@@ -7,6 +7,8 @@ import tanning from '../assets/images/tanning.jpg';
 import waxing from '../assets/images/waxing.jpg';
 import care from '../assets/images/care.jpg';
 
+import hairModel from '../assets/images/hairmodel.jpg';
+
 import blottingPowder from '../assets/images/blottingPowder.jpeg';
 import eauDeParfum from '../assets/images/eauDeParfum.jpeg';
 import fentyParfum from '../assets/images/fentyParfum.jpeg';
@@ -20,9 +22,20 @@ import logo from '../assets/icons/logo.png';
 import badge from '../assets/icons/badge.png';
 import heart from '../assets/icons/heart.png';
 import left from '../assets/icons/left.png';
+import right from '../assets/icons/right.png';
 import search from '../assets/icons/search.png';
 
+import appointment from '../assets/icons/appointment.png';
+import orders from '../assets/icons/orders.png';
+import setting from '../assets/icons/setting.png';
+import wishlist from '../assets/icons/wishlist.png';
+
 export default {
+	appointment,
+	orders,
+	setting,
+	wishlist,
+
 	blottingPowder,
 	eauDeParfum,
 	fentyParfum,
@@ -45,5 +58,8 @@ export default {
 	badge,
 	heart,
 	left,
+	right,
 	search,
+
+	hairModel,
 };

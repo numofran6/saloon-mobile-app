@@ -76,6 +76,7 @@ const Home = ({ navigation }) => {
 					data={servicesData}
 					renderItem={({ item }) => <ServicesCard service={item} />}
 					keyExtractor={(item) => item.id}
+					showsVerticalScrollIndicator={false}
 				/>
 			</View>
 		</SafeAreaView>

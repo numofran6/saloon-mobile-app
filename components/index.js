@@ -9,6 +9,8 @@ import {
 import Login from './Login';
 import SignUp from './SignUp';
 import ServicesCard from './ServicesCard';
+import ProductsCard from './ProductsCard';
+import ProfileCard from './ProfileCard';
 
 export {
 	FocusedStatusBar,
@@ -20,4 +22,6 @@ export {
 	SignUp,
 	NavButton,
 	ServicesCard,
+	ProductsCard,
+	ProfileCard,
 };

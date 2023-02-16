@@ -1,4 +1,5 @@
 import {
+	FlatList,
 	Image,
 	SafeAreaView,
 	StatusBar,
@@ -6,27 +7,39 @@ import {
 	Text,
 	View,
 } from 'react-native';
-import { FocusedStatusBar } from '../components';
-import { assets, COLORS, FONTS, SIZES } from '../constants';
+import { FocusedStatusBar, ProfileCard } from '../components';
+import { assets, COLORS, FONTS, ProfileDetials, SIZES } from '../constants';
 
 const Profile = ({ navigation }) => {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<FocusedStatusBar
-				barStyle="light-content"
+				barStyle="dark-content"
 				backgroundColor="transparent"
 				translucent={true}
 			/>
 
-			<View style={styles.heading}>
+			<View style={{ width: '100%', height: 280 }}>
 				<Image
-					source={assets.logo}
-					resizeMode="contain"
-					style={{ width: 40, height: 40 }}
+					source={assets.hairModel}
+					resizeMode="cover"
+					style={{ width: '100%', height: '100%' }}
 				/>
+
+				<View style={styles.userInfo}>
+					<Text style={styles.name}>Lois</Text>
+					<Text style={styles.email}>lois@gmail.com</Text>
+				</View>
 			</View>
 
-			<Text>Shop</Text>
+			<View style={styles.profileOptionsContainer}>
+				<FlatList
+					data={ProfileDetials}
+					renderItem={({ item }) => <ProfileCard item={item} />}
+					keyExtractor={(item) => item.id}
+					showsVerticalScrollIndicator={false}
+				/>
+			</View>
 		</SafeAreaView>
 	);
 };
@@ -34,19 +47,25 @@ const Profile = ({ navigation }) => {
 export default Profile;
 
 const styles = StyleSheet.create({
-	heading: {
-		flexDirection: 'row',
-		justifyContent: 'center',
+	userInfo: {
+		position: 'absolute',
+		bottom: 0,
+		width: '100%',
+		backgroundColor: 'rgba(0, 0, 0, 0.2)',
 		alignItems: 'center',
-		padding: SIZES.small,
-		paddingTop: StatusBar.currentHeight + SIZES.medium,
-		paddingBottom: SIZES.medium,
-		backgroundColor: COLORS.primary,
+		paddingVertical: SIZES.medium,
 	},
-	headingSubText: {
+	name: {
 		fontFamily: FONTS.bold,
-		color: COLORS.white,
-		fontSize: SIZES.medium,
-		textTransform: 'uppercase',
+		fontSize: SIZES.xlarge,
+		color: '#d0206f',
+	},
+	email: {
+		color: '#d1d5db',
+		fontFamily: FONTS.bold,
+	},
+	profileOptionsContainer: {
+		paddingHorizontal: SIZES.medium,
+		flex: 1,
 	},
 });

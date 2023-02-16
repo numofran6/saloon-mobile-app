@@ -1,15 +1,35 @@
+import { useState } from 'react';
 import {
+	FlatList,
 	Image,
 	SafeAreaView,
 	StatusBar,
 	StyleSheet,
-	Text,
+	TextInput,
 	View,
 } from 'react-native';
-import { FocusedStatusBar } from '../components';
-import { assets, COLORS, FONTS, SIZES } from '../constants';
+import { FocusedStatusBar, ProductsCard } from '../components';
+import { assets, COLORS, FONTS, Products, SIZES } from '../constants';
 
 const Shop = ({ navigation }) => {
+	const [productsData, setProductsData] = useState(Products);
+
+	const handleSearch = (value) => {
+		if (value.length === 0) {
+			setProductsData(Products);
+		}
+
+		const filteredData = Products.filter((item) =>
+			item.name.toLowerCase().includes(value.toLowerCase())
+		);
+
+		if (filteredData.length === 0) {
+			setProductsData(Products);
+		} else {
+			setProductsData(filteredData);
+		}
+	};
+
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<FocusedStatusBar
@@ -26,7 +46,30 @@ const Shop = ({ navigation }) => {
 				/>
 			</View>
 
-			<Text>Shop</Text>
+			<View style={styles.textInputContainer}>
+				<View style={styles.textInput}>
+					<Image
+						source={assets.search}
+						resizeMode="contain"
+						style={{ width: 20, height: 20, marginRight: SIZES.base }}
+					/>
+					<TextInput
+						placeholder="Search Shop..."
+						style={{ flex: 1 }}
+						onChangeText={handleSearch}
+					/>
+				</View>
+			</View>
+
+			<View style={styles.products}>
+				<FlatList
+					data={productsData}
+					renderItem={({ item }) => <ProductsCard product={item} />}
+					keyExtractor={(item) => item.id}
+					numColumns={2}
+					showsVerticalScrollIndicator={false}
+				/>
+			</View>
 		</SafeAreaView>
 	);
 };
@@ -48,5 +91,26 @@ const styles = StyleSheet.create({
 		color: COLORS.white,
 		fontSize: SIZES.medium,
 		textTransform: 'uppercase',
+	},
+	textInputContainer: {
+		backgroundColor: COLORS.primary,
+		paddingTop: SIZES.large,
+		paddingBottom: SIZES.medium,
+		alignItems: 'center',
+	},
+	textInput: {
+		width: '90%',
+		borderRadius: SIZES.font,
+		backgroundColor: COLORS.gray,
+		flexDirection: 'row',
+		alignItems: 'center',
+		paddingHorizontal: SIZES.font,
+		paddingVertical: SIZES.small - 2,
+	},
+	products: {
+		flex: 2,
+		marginHorizontal: 'auto',
+		width: '100%',
+		backgroundColor: '#9ca3af',
 	},
 });
