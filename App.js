@@ -2,6 +2,7 @@ import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
 import { AuthScreenContextProvider } from './context/AuthScreenContext';
+import BookingForm from './screen/BookingForm';
 import Hero from './screen/Hero';
 import Main from './screen/Main';
 import ProductDetails from './screen/ProductDetails';
@@ -39,6 +40,7 @@ export default function App() {
 					<Stack.Screen name="main" component={Main} />
 					<Stack.Screen name="details" component={ServicesDetails} />
 					<Stack.Screen name="product-details" component={ProductDetails} />
+					<Stack.Screen name="booking" component={BookingForm} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</AuthScreenContextProvider>

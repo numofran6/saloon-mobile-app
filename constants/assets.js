@@ -8,6 +8,8 @@ import waxing from '../assets/images/waxing.jpg';
 import care from '../assets/images/care.jpg';
 
 import hairModel from '../assets/images/hairmodel.jpg';
+import hero1 from '../assets/images/hero1.jpg';
+import hero2 from '../assets/images/hero2.jpg';
 
 import blottingPowder from '../assets/images/blottingPowder.jpeg';
 import eauDeParfum from '../assets/images/eauDeParfum.jpeg';
@@ -62,4 +64,6 @@ export default {
 	search,
 
 	hairModel,
+	hero1,
+	hero2,
 };

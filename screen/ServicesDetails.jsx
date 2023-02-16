@@ -66,7 +66,11 @@ const ServicesDetails = ({ route, navigation }) => {
 			</ScrollView>
 
 			<View style={styles.bookBtn}>
-				<FilledButton bg={COLORS.primary} minWidth={'80%'}>
+				<FilledButton
+					bg={COLORS.primary}
+					minWidth={'80%'}
+					handlePress={() => navigation.navigate('booking')}
+				>
 					<Text>Book An Appointment</Text>
 				</FilledButton>
 			</View>

@@ -30,11 +30,7 @@ const Hero = () => {
 			/>
 
 			<View style={styles.container}>
-				<Image
-					source={assets.makeupToolkit1}
-					resizeMode="cover"
-					style={styles.image}
-				/>
+				<Image source={assets.hero2} resizeMode="cover" style={styles.image} />
 
 				<View style={styles.heading}>
 					<Image
