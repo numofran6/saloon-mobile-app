@@ -24,7 +24,7 @@ const Hero = () => {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<FocusedStatusBar
-				barStyle="dark-content"
+				barStyle="light-content"
 				backgroundColor="transparent"
 				translucent={true}
 			/>
